@@ -1,0 +1,37 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Lemons</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="SitePoint">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+</head>
+
+<body id="body">
+    <div></div>
+    <div id="instructions" class="col-sm-5">
+        <span>Type 'Help' to see all available functions you are able to use</span>
+        <div>
+            <span class="col-sm-2" style="font-weight: Bold"> root ❯ </span>
+            <input id="inputcommands" type="text" style="background-color: black; color: lime; border: none; outline: none" onkeypress="this.style.width = ((this.value.length + 1) * 10) + 'px';"></input>
+            <script>
+                var commands = document.getElementById("inputcommands");
+                commands.addEventListener("change", function() {
+                    if(commands.value == "Help"){
+                        alert("You have proceeded to help")
+                    } else {
+                        alert("Invalid command")
+                    }
+                });
+            </script>
+        </div>
+    </div>
+</body>
+
+</html>

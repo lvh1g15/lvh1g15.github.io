@@ -1,0 +1,11 @@
+#body {
+    background-color: black;
+}
+
+#instructions {
+    padding-top: 50px;
+    font-family: Menlo;
+    font-size: 15px;
+    color: lime;
+}
+
