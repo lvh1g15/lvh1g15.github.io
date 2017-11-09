@@ -42,6 +42,7 @@ class Instructions {
                 if(command.value == "Help"){
                     alert("You have proceeded to help");
                 }
+                event.preventDefault()
             }
         });
     }

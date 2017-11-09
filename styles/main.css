@@ -9,28 +9,13 @@ body {
     font-size: 11pt;
     padding: 10px;
     box-sizing: border-box;
-    /*position: absolute;*/
+    position: absolute;
     width: 100%;
     top: 30px;
     bottom: 0;
     overflow: auto;
 }
 
-#instructions > #inputcommands {
-    width: 100%;
-    display: inline-block;
+#inputcommands {
+    border: none; outline: none;
 }
-
-/*#inputcommands {*/
-    /*font-family: Menlo;*/
-    /*font-size: 15px;*/
-    /*color: lime;*/
-    /*display: inline-block;*/
-/*}*/
-
-/*#single {*/
-    /*font-family: Menlo;*/
-    /*font-size: 15px;*/
-    /*color: lime;*/
-/*}*/
-
