@@ -9,47 +9,22 @@
     <meta name="author" content="SitePoint">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <script src="instructions.js"></script>
+    <script src="instructionInstance.js"></script>
 </head>
 
 <body id="body">
-    <div id="instructions" class="col-sm-5">
-        <span>Type 'Help' to see all available functions you are able to use</span>
-
-        <div id="commandlist">
-            <p id="single" style="font-family: Menlo; font-size: 15px; padding-left: 20px; padding: 10px">
-                <row>
-                    <span style="font-weight: Bold;"> root ❯ </span>
-                    <span id="inputcommands" contenteditable="true" style="border: none; outline: none"></span>
-                </row>
-            </p>
-        </div>
-
-        <script>
-            var commands = document.getElementById("instructions");
-
-            commands.addEventListener("keypress", function(event) {
-                console.log(event.keyCode)
-
-                if (event.keyCode == 13) {
-                    console.log("entered");
-                    var parent = event.target.parentNode.cloneNode(true);
-
-                    event.target.setAttribute('contenteditable', false);
-                    var divbyID = document.getElementById("instructions");
-
-                    divbyID.append(parent);
-                    parent.querySelector('#inputcommands').innerHTML = '';
-                    parent.querySelector('#inputcommands').focus();
-                }
-
-                if(commands.value == "Help"){
-                    alert("You have proceeded to help");
-                }
-            });
-
-        </script>
+    <div id="instructions">
+        <span class="helper">Type 'Help' to see all available functions you are able to use</span>
+        <p id="wrapper">
+            <span class="single" id="single">
+                <span>
+                    <span class="roottick"> root ❯ </span>
+                </span>
+                <span contenteditable="true" id="inputcommands">heloo</span>
+            </span>
+        </p>
     </div>
 </body>
 
