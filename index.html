@@ -18,22 +18,30 @@
         <span>Type 'Help' to see all available functions you are able to use</span>
 
         <div id="commandlist">
-            <p id="single" style="font-weight: Bold; font-family: Menlo; font-size: 15px; padding-left: 20px; padding: 10px"> root ❯
-                <input id="inputcommands" type="text" style="background-color: black; color: lime; border: none; outline: none" onkeypress="this.style.width = ((this.value.length + 1) * 10) + 'px';"></input>
+            <p id="single" style="font-family: Menlo; font-size: 15px; padding-left: 20px; padding: 10px">
+                <row>
+                    <span style="font-weight: Bold;"> root ❯ </span>
+                    <span id="inputcommands" contenteditable="true" style="border: none; outline: none"></span>
+                </row>
             </p>
         </div>
 
         <script>
-            var commands = document.getElementById("inputcommands");
-            commands.addEventListener("keypress", function(event) {
-                console.log("any para")
+            var commands = document.getElementById("instructions");
 
-                if ( event.keyCode == 13 && commands.value == "") {
+            commands.addEventListener("keypress", function(event) {
+                console.log(event.keyCode)
+
+                if (event.keyCode == 13) {
                     console.log("entered");
                     var parent = event.target.parentNode.cloneNode(true);
 
-                    var divbyID = document.getElementById("commandlist");
+                    event.target.setAttribute('contenteditable', false);
+                    var divbyID = document.getElementById("instructions");
+
                     divbyID.append(parent);
+                    parent.querySelector('#inputcommands').innerHTML = '';
+                    parent.querySelector('#inputcommands').focus();
                 }
 
                 if(commands.value == "Help"){
