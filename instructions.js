@@ -1,38 +1,27 @@
 class Instructions {
 
     constructor(instructions) {
-
+        this.manager = new commandsnode()
         let inputcommand = document.getElementById('inputcommands')
         inputcommand.focus()
         this.instructions = instructions
         this.commandKeys = {
             enter: 13,
         };
-        this.directory = "/home"
-        this.directoryLevel = 0
-        this.possiblepaths = ['projects', 'contact']
 
-        this.directorytotal = {
-
-            0: ['projects', 'contact'],
-            1: ["email: landonvagohughes@gmail.com", "LinkedIn: linkedin.com/in/landon-vago-hughes-01a47712a"],
-            2: ["slider-progress", "search-bar-animation"]
-
-        }
-
-        this.possiblecommands = ['cd: Travel into directory', 'ls: Show contents of directory', 'Help: List commands', 'open: Open content', 'pwd: View your current location', "clear: Clear command history"]
-        this.listofcms = ['cd', 'ls', 'Help', 'open', 'pwd']
         Instructions.init()
         this.setListeners(instructions);
 
         this.nakedcommands =
-            "<span class='helper'>Type 'Help' to see all available functions you are able to use</span>\n" +
+            "<p>Current time: <span id='datetime'>Tue Nov 7 03:27:48</span></p>\n" +
+            "<span class='helper'>Welcome user - Type 'Help' to get started</span>\n" +
             "<p id='wrapper'>\n" +
                 "<span>\n" +
                     "<span class='roottick'> root ❯ </span>\n" +
                 "</span>\n" +
                 "<span contenteditable='true' id='inputcommands'></span>\n" +
             "</p>"
+        Instructions.updateDateTime()
     }
 
     static pwd() {
@@ -43,51 +32,10 @@ class Instructions {
         $(body).css('background-color', 'black')
     }
 
-    handlecommand(cmd, args) {
-        let err = new errors(args)
-        let links = new HrefLinks()
-        console.log(args, this.directoryLevel)
-
-        if(cmd == 'pwd'){
-            return this.directory
-        } else if(cmd == "ls"){
-
-            if(this.directoryLevel == 0) {
-                return this.listdirectories(this.directorytotal[0])
-            }else if(this.directoryLevel == 1) {
-                return this.listdirectories(this.directorytotal[1])
-            }else if(this.directoryLevel == 2) {
-                return this.listdirectories(this.directorytotal[2])
-            }
-        } else if(cmd == "cd"){
-
-            if(args == "contact"){
-                if(this.directorytotal[this.directoryLevel].indexOf(args) == -1){
-                    this.instructions.innerHTML += err.cderror
-                }else{
-                    this.directory += "/contact"
-                    this.directoryLevel = 1
-                }
-            }else if(args == 'projects'){
-
-                this.directory += "/projects"
-                this.directoryLevel = 2
-            } else {
-                this.instructions.innerHTML += err.cderror
-            }
-
-        } else if(cmd == "Help") {
-            return this.listdirectories(this.possiblecommands)
-        } else if(cmd == "open") {
-            if(this.directoryLevel == 0){
-                this.instructions.innerHTML += err.opendirectoryerr
-            }else{
-
-                const requiredlink = links.linkdict[`${args}`]
-                links.windowlocation(requiredlink)
-                this.instructions.innerHTML += `<p>Check new window for project</p>`
-            }
-        }
+    static updateDateTime() {
+        let date = new Date();
+        let d = document.getElementById("datetime");
+        d.innerHTML = date;
     }
 
     listdirectories(list){
@@ -95,7 +43,6 @@ class Instructions {
         list.forEach((item)=>{
             output += `<p>${item}</p>`
         });
-        console.log(output)
         return output
     }
 
@@ -108,18 +55,17 @@ class Instructions {
                 let input = target.textContent.trim().split(" ");
                 let command = input[0];
                 let args = input[1];
-                let err = new errors(command)
                 if(command == 'clear') {
                     this.clearhistory()
                 } else if(command && ['pwd', 'ls', 'open', 'cd', 'Help'].includes(command)) {
                     if(command === 'cd'){
-                        this.handlecommand(command, args)
+                        this.manager.handlecommands(command, args, this.instructions)
                     }else{
-                        this.instructions.innerHTML += this.handlecommand(command, args)
+                        this.instructions.innerHTML += this.manager.handlecommands(command, args, this.instructions)
                     }
                     this.reset(target)
                 } else {
-                    this.instructions.innerHTML += err.invalidcmd
+                    this.instructions.innerHTML += this.manager.errors(command, 1)
                     this.reset(target);
                 }
                 event.preventDefault()
@@ -131,6 +77,7 @@ class Instructions {
         this.instructions.innerHTML = this.nakedcommands;
         let input = document.getElementById('inputcommands')
         input.focus();
+        Instructions.updateDateTime()
     }
 
     reset(previoustarget) {
@@ -142,23 +89,6 @@ class Instructions {
         copy.querySelector('#inputcommands').focus();
     }
 
-}
-
-class errors {
-
-    constructor(args) {
-        this.cderror = ''
-        this.invalidcmd = ''
-        this.opendirectoryerr = ''
-        this.init(args)
-    }
-
-    init(args){
-        console.log(args)
-        this.cderror = `<p>${args} is not an available directory - try open </p>`
-        this.invalidcmd = `<p>-bash: ${args}: command not found</p>`
-        this.opendirectoryerr = `<p> cannot open directory - try cd</p>`
-    }
 }
 
 class HrefLinks {
@@ -180,5 +110,84 @@ class HrefLinks {
 
     windowlocation(url) {
         window.open(url, '_blank')
+    }
+}
+
+class commandsnode {
+    constructor() {
+        this.links = new HrefLinks()
+        this.parent = ''
+        this.command = {}
+        this.directory = "/home"
+        this.directoryLevel = 0
+        this.directorytotal = {
+
+            0: ['projects', 'contact'],
+            1: ["email: landonvagohughes3@gmail.com", "LinkedIn: linkedin.com/in/landon-vago-hughes-01a47712a"],
+            2: ["slider-progress", "search-bar-animation"]
+
+        }
+        this.help = ['cd: Travel into directory e.g cd projects', 'ls: Show contents of directory', 'Help: List commands', 'open: Open content eg open ->projectname<-', 'pwd: View your current location', "clear: Clear command history"]
+        this.init()
+    }
+
+    init(){
+
+        this.command.pwd = () => {
+            return this.directory
+        }
+
+        this.command.open = (args) => {
+            if(this.directorylevel == 0){
+                this.parent.innerHTML += this.errors(args, 2)
+            }else {
+                this.instructions.innerHTML += `<p>${args} has opened in a new tab</p>`
+                const requiredlink = this.links.linkdict[`${args}`]
+                return this.links.windowlocation(requiredlink)
+            }
+        }
+
+        this.command.cd = (args) => {
+            if(this.directorytotal[this.directoryLevel].indexOf(args) == -1){
+                this.parent.innerHTML += this.errors(args, 0)
+            }else{
+                this.directory += `/${args}`
+                if(args == 'projects'){
+                    this.directoryLevel = 2
+                }else if(args == 'contact'){
+                    this.directoryLevel = 1
+                }
+            }
+        }
+
+        this.command.Help = () => {
+            return this.listdirectories(this.help)
+        }
+
+        this.command.ls = () => {
+            return this.listdirectories(this.directorytotal[this.directoryLevel])
+        }
+    }
+
+    errors(args, errcode){
+        const dictoferror = {
+            0: this.cderror = `<p>${args} is not an available directory - try open </p>`,
+            1: this.invalidcmd = `<p>-bash: ${args}: command not found</p>`,
+            2: this.opendirectoryerr = `<p> cannot open directory - try cd</p>`
+        }
+        return dictoferror[errcode]
+    }
+
+    listdirectories(list){
+        let output = ""
+        list.forEach((item)=>{
+            output += `<p>${item}</p>`
+        });
+        return output
+    }
+
+    handlecommands(cmd, args, parent){
+        this.parent = parent
+        return this.command[cmd](args)
     }
 }
