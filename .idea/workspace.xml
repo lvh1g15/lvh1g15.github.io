@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="afd9f59a-4b7c-4ea4-a4bf-d266d95c73a7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/instructions.js" afterPath="$PROJECT_DIR$/instructions.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -21,7 +20,7 @@
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
-              <caret line="19" column="72" lean-forward="false" selection-start-line="19" selection-start-column="72" selection-end-line="19" selection-end-column="72" />
+              <caret line="19" column="62" lean-forward="true" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -30,10 +29,10 @@
       <file leaf-file-name="instructions.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/instructions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="166" column="39" lean-forward="true" selection-start-line="166" selection-start-column="39" selection-end-line="166" selection-end-column="39" />
+            <state relative-caret-position="240">
+              <caret line="16" column="67" lean-forward="false" selection-start-line="16" selection-start-column="67" selection-end-line="16" selection-end-column="67" />
               <folding>
-                <marker date="1510335098000" expanded="true" signature="5271:5974" ph="..." />
+                <marker date="1510335514000" expanded="true" signature="5292:5995" ph="..." />
               </folding>
             </state>
           </provider>
@@ -178,12 +177,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1510170148536</updated>
-      <workItem from="1510170150847" duration="47922000" />
+      <workItem from="1510170150847" duration="48032000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47922000" />
+    <option name="totallyTimeSpent" value="48032000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="837" extended-state="0" />
@@ -245,17 +244,17 @@
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
-          <caret line="19" column="72" lean-forward="false" selection-start-line="19" selection-start-column="72" selection-end-line="19" selection-end-column="72" />
+          <caret line="19" column="62" lean-forward="true" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="62" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/instructions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="166" column="39" lean-forward="true" selection-start-line="166" selection-start-column="39" selection-end-line="166" selection-end-column="39" />
+        <state relative-caret-position="240">
+          <caret line="16" column="67" lean-forward="false" selection-start-line="16" selection-start-column="67" selection-end-line="16" selection-end-column="67" />
           <folding>
-            <marker date="1510335098000" expanded="true" signature="5271:5974" ph="..." />
+            <marker date="1510335514000" expanded="true" signature="5292:5995" ph="..." />
           </folding>
         </state>
       </provider>

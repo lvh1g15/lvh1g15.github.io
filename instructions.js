@@ -14,7 +14,7 @@ class Instructions {
 
         this.nakedcommands =
             "<p>Current time: <span id='datetime'>Tue Nov 7 03:27:48</span></p>\n" +
-            "<span class='helper'>Welcome user - Type 'help' to get started</span>\n" +
+            "<span class='helper'>Welcome user to Landons' terminal - Type 'help' to get started</span>\n" +
             "<p id='wrapper'>\n" +
                 "<span>\n" +
                     "<span class='roottick'> root ❯ </span>\n" +
