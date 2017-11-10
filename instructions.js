@@ -96,6 +96,9 @@ class HrefLinks {
         this.linkedIn = 'linkedin.com/in/landon-vago-hughes-01a47712a'
         this.searchbaranimation = 'https://github.com/lvh1g15/SearchBar-Animation'
         this.sliderprogress = 'https://cocoapods.org/?q=sliderprogress'
+        this.tinderanimation = 'https://github.com/lvh1g15/TinderLikeAnimation'
+        this.raspberrypiiot = 'https://github.com/hackcity2017'
+        this.govhack = 'https://github.com/GovHackBackstreets'
         this.linkdict = {}
         this.init()
     }
@@ -104,7 +107,10 @@ class HrefLinks {
         this.linkdict = {
             'linkedIn': this.linkedIn,
             'slider-progress': this.sliderprogress,
-            'search-bar-animation': this.searchbaranimation
+            'search-bar-animation': this.searchbaranimation,
+            'tinder-inspired': this.tinderanimation,
+            'raspberry-pi-iOS': this.raspberrypiiot,
+            'foodstamp-iOS': this.govhack
         }
     }
 
@@ -123,8 +129,8 @@ class commandsnode {
         this.directorytotal = {
 
             0: ['projects', 'contact'],
-            1: ["email: landonvagohughes3@gmail.com", "LinkedIn: linkedin.com/in/landon-vago-hughes-01a47712a"],
-            2: ["slider-progress", "search-bar-animation"]
+            1: ["email: landonvagohughes3@gmail.com", "linkedIn"],
+            2: ["slider-progress", "search-bar-animation", 'tinder-inspired', 'raspberry-pi-iOS', 'foodstamp-iOS']
 
         }
         this.help = ['cd: Travel into directory e.g cd projects', 'ls: Show contents of directory', 'Help: List commands', 'open: Open content eg open ->projectname<-', 'pwd: View your current location', "clear: Clear command history"]
@@ -132,7 +138,6 @@ class commandsnode {
     }
 
     init(){
-
         this.command.pwd = () => {
             return this.directory
         }
@@ -141,9 +146,10 @@ class commandsnode {
             if(this.directorylevel == 0){
                 this.parent.innerHTML += this.errors(args, 2)
             }else {
-                this.instructions.innerHTML += `<p>${args} has opened in a new tab</p>`
+
                 const requiredlink = this.links.linkdict[`${args}`]
-                return this.links.windowlocation(requiredlink)
+                this.links.windowlocation(requiredlink)
+                return `<p>${args} has opened in another tag please have a look</p>`
             }
         }
 

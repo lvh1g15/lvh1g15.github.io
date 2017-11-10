@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="afd9f59a-4b7c-4ea4-a4bf-d266d95c73a7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/instructions.js" afterPath="$PROJECT_DIR$/instructions.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -31,9 +29,11 @@
       <file leaf-file-name="instructions.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/instructions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="509">
-              <caret line="79" column="37" lean-forward="true" selection-start-line="79" selection-start-column="37" selection-end-line="79" selection-end-column="37" />
-              <folding />
+            <state relative-caret-position="-109">
+              <caret line="151" column="79" lean-forward="false" selection-start-line="151" selection-start-column="79" selection-end-line="151" selection-end-column="79" />
+              <folding>
+                <marker date="1510303602000" expanded="true" signature="5083:5397" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -177,12 +177,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1510170148536</updated>
-      <workItem from="1510170150847" duration="44877000" />
+      <workItem from="1510170150847" duration="45698000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44877000" />
+    <option name="totallyTimeSpent" value="45698000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="837" extended-state="0" />
@@ -251,9 +251,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/instructions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="79" column="37" lean-forward="true" selection-start-line="79" selection-start-column="37" selection-end-line="79" selection-end-column="37" />
-          <folding />
+        <state relative-caret-position="-109">
+          <caret line="151" column="79" lean-forward="false" selection-start-line="151" selection-start-column="79" selection-end-line="151" selection-end-column="79" />
+          <folding>
+            <marker date="1510303602000" expanded="true" signature="5083:5397" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
