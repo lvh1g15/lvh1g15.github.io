@@ -42,6 +42,11 @@ class Instructions {
         } else if(cmd == "ls"){
             console.log(this.possiblepaths)
             return this.listdirectories(this.possiblepaths)
+        } else if(cmd == "cd"){
+            if(args == "contact"){
+                this.directory += "/contact"
+                return this.listdirectories(this.contact)
+            }
         }
     }
 
