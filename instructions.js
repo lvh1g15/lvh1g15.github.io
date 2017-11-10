@@ -36,8 +36,22 @@ class Instructions {
     }
 
     handlecommand(cmd, args) {
-        if(cmd == 'pwd')
-        return this.directory
+        console.log(cmd)
+        if(cmd == 'pwd'){
+            return this.directory
+        } else if(cmd == "ls"){
+            console.log(this.possiblepaths)
+            return this.listdirectories(this.possiblepaths)
+        }
+    }
+
+    listdirectories(list){
+        let output = ""
+        list.forEach((item)=>{
+            output += `<p>${item}</p>`
+        });
+        console.log(output)
+        return output
     }
 
     setListeners(instructions) {
@@ -48,8 +62,6 @@ class Instructions {
                 let input = target.textContent.trim().split(" ");
                 let command = input[0];
                 let args = input[1];
-
-                console.log(command, args)
 
                 if(command == 'clear') {
                     this.clearhistory()
