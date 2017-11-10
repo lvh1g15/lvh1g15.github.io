@@ -19,10 +19,8 @@ class Instructions {
             2: ["https://cocoapods.org/?q=sliderprogress", "https://github.com/lvh1g15/SearchBar-Animation"]
 
         }
-
         this.possiblecommands = ['cd: Travel into directory', 'ls: Show contents of directory', 'Help: List commands', 'open: Open content', 'pwd: View your current location']
-        this.contact = ["email: landonvagohughes@gmail.com", "github: lvh1g15", "linkedIn: linkedin.com/in/landon-vago-hughes-01a47712a"]
-        this.projects = ["https://cocoapods.org/?q=sliderprogress", "https://github.com/lvh1g15/SearchBar-Animation"]
+        this.listofcms = ['cd', 'ls', 'Help', 'open', 'pwd']
         Instructions.init()
         this.setListeners(instructions);
 
@@ -45,6 +43,8 @@ class Instructions {
     }
 
     handlecommand(cmd, args) {
+        let err = new errors(args)
+        console.log(args, this.directoryLevel)
 
         if(cmd == 'pwd'){
             return this.directory
@@ -57,19 +57,21 @@ class Instructions {
             }else if(this.directoryLevel == 2) {
                 return this.listdirectories(this.directorytotal[2])
             }
-
         } else if(cmd == "cd"){
+
             if(args == "contact"){
-
-                if(this.directorytotal != 1){
-
+                if(this.directorytotal[this.directoryLevel].indexOf(args) == -1){
+                    this.instructions.innerHTML += err.cderror
+                }else{
+                    this.directory += "/contact"
+                    this.directoryLevel = 1
                 }
-
-                this.directory += "/contact"
-                this.directoryLevel = 1
             }else if(args == 'projects'){
+
                 this.directory += "/projects"
                 this.directoryLevel = 2
+            } else {
+                this.instructions.innerHTML += err.cderror
             }
         } else if(cmd == "Help"){
             return this.listdirectories(this.possiblecommands)
@@ -87,13 +89,14 @@ class Instructions {
 
     setListeners(instructions) {
         instructions.addEventListener("keypress", (event) => {
+
             let key = event.keyCode;
             if (key === this.commandKeys.enter) {
                 let target = event.target
                 let input = target.textContent.trim().split(" ");
                 let command = input[0];
                 let args = input[1];
-
+                let err = new errors(command)
                 if(command == 'clear') {
                     this.clearhistory()
                 } else if(command && ['pwd', 'ls', 'open', 'cd', 'Help'].includes(command)) {
@@ -104,7 +107,7 @@ class Instructions {
                     }
                     this.reset(target)
                 } else {
-                    this.instructions.innerHTML += "<p style='padding-left:  10px; font-family: Menlo; font-size: 15px; color: lime'>Error: command not recognized</p>";
+                    this.instructions.innerHTML += err.invalidcmd
                     this.reset(target);
                 }
                 event.preventDefault()
@@ -129,19 +132,17 @@ class Instructions {
 
 }
 
-
-
 class errors {
 
-    constructor() {
+    constructor(args) {
         this.cderror = ''
         this.invalidcmd = ''
-        this.init()
+        this.init(args)
     }
 
-    init(){
-
+    init(args){
+        console.log(args)
+        this.cderror = `<p>${args} is not an available directory - try open </p>`
+        this.invalidcmd = `<p>-bash: ${args}: command not found</p>`
     }
-
-    
 }
