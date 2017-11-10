@@ -14,7 +14,7 @@ class Instructions {
 
         this.nakedcommands =
             "<p>Current time: <span id='datetime'>Tue Nov 7 03:27:48</span></p>\n" +
-            "<span class='helper'>Welcome user - Type 'Help' to get started</span>\n" +
+            "<span class='helper'>Welcome user - Type 'help' to get started</span>\n" +
             "<p id='wrapper'>\n" +
                 "<span>\n" +
                     "<span class='roottick'> root ❯ </span>\n" +
@@ -57,14 +57,15 @@ class Instructions {
                 let args = input[1];
                 if(command == 'clear') {
                     this.clearhistory()
-                } else if(command && ['pwd', 'ls', 'open', 'cd', 'Help'].includes(command)) {
+                } else if(command && ['pwd', 'ls', 'open', 'cd', 'help'].includes(command)) {
                     if(command === 'cd'){
+                        console.log(args)
                         this.manager.handlecommands(command, args, this.instructions)
                     }else{
                         this.instructions.innerHTML += this.manager.handlecommands(command, args, this.instructions)
                     }
                     this.reset(target)
-                } else {
+                }else {
                     this.instructions.innerHTML += this.manager.errors(command, 1)
                     this.reset(target);
                 }
@@ -93,7 +94,7 @@ class Instructions {
 
 class HrefLinks {
     constructor(){
-        this.linkedIn = 'linkedin.com/in/landon-vago-hughes-01a47712a'
+        this.linkedIn = 'https://linkedin.com/in/landon-vago-hughes-01a47712a'
         this.searchbaranimation = 'https://github.com/lvh1g15/SearchBar-Animation'
         this.sliderprogress = 'https://cocoapods.org/?q=sliderprogress'
         this.tinderanimation = 'https://github.com/lvh1g15/TinderLikeAnimation'
@@ -133,13 +134,20 @@ class commandsnode {
             2: ["slider-progress", "search-bar-animation", 'tinder-inspired', 'raspberry-pi-iOS', 'foodstamp-iOS']
 
         }
-        this.help = ['cd: Travel into directory e.g cd projects', 'ls: Show contents of directory', 'Help: List commands', 'open: Open content eg open ->projectname<-', 'pwd: View your current location', "clear: Clear command history"]
+
+        this.path = {
+            0: "/home",
+            1: "/home/contact",
+            2: "/home/projects"
+        }
+
+        this.help = ['cd: Travel into directory e.g cd projects', 'ls: Show contents of directory', 'Help: List commands', 'open: Open content e.g open ->projectname<-', 'pwd: View your current location', "clear: Clear command history"]
         this.init()
     }
 
     init(){
         this.command.pwd = () => {
-            return this.directory
+            return this.path[this.directoryLevel]
         }
 
         this.command.open = (args) => {
@@ -154,14 +162,19 @@ class commandsnode {
         }
 
         this.command.cd = (args) => {
-            if(this.directorytotal[this.directoryLevel].indexOf(args) == -1){
-                this.parent.innerHTML += this.errors(args, 0)
+            console.log(args)
+            if(args == ".."){
+                this.directoryLevel = 0
             }else{
-                this.directory += `/${args}`
-                if(args == 'projects'){
-                    this.directoryLevel = 2
-                }else if(args == 'contact'){
-                    this.directoryLevel = 1
+                if(this.directorytotal[this.directoryLevel].indexOf(args) == -1){
+                    this.parent.innerHTML += this.errors(args, 0)
+                }else{
+                    this.directory += `/${args}`
+                    if(args == 'projects'){
+                        this.directoryLevel = 2
+                    }else if(args == 'contact'){
+                        this.directoryLevel = 1
+                    }
                 }
             }
         }
@@ -172,6 +185,10 @@ class commandsnode {
 
         this.command.ls = () => {
             return this.listdirectories(this.directorytotal[this.directoryLevel])
+        }
+
+        this.command.dotdot = () => {
+
         }
     }
 
