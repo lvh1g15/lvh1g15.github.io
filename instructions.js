@@ -20,7 +20,7 @@ class Instructions {
 
         }
 
-        this.possiblecommands = ['cd: Travel into directory', 'ls: Show contents of directory', 'Help: List commands', 'open: Open content', 'pwd: View your current location']
+        this.possiblecommands = ['cd: Travel into directory', 'ls: Show contents of directory', 'Help: List commands', 'open: Open content', 'pwd: View your current location', "clear: Clear command history"]
         this.listofcms = ['cd', 'ls', 'Help', 'open', 'pwd']
         Instructions.init()
         this.setListeners(instructions);
