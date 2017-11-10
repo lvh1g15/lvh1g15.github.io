@@ -15,10 +15,11 @@ class Instructions {
         this.directorytotal = {
 
             0: ['projects', 'contact'],
-            1: ["email: landonvagohughes@gmail.com", "github: lvh1g15", "linkedIn: linkedin.com/in/landon-vago-hughes-01a47712a"],
-            2: ["https://cocoapods.org/?q=sliderprogress", "https://github.com/lvh1g15/SearchBar-Animation"]
+            1: ["email: landonvagohughes@gmail.com", "LinkedIn: linkedin.com/in/landon-vago-hughes-01a47712a"],
+            2: ["slider-progress", "search-bar-animation"]
 
         }
+
         this.possiblecommands = ['cd: Travel into directory', 'ls: Show contents of directory', 'Help: List commands', 'open: Open content', 'pwd: View your current location']
         this.listofcms = ['cd', 'ls', 'Help', 'open', 'pwd']
         Instructions.init()
@@ -44,6 +45,7 @@ class Instructions {
 
     handlecommand(cmd, args) {
         let err = new errors(args)
+        let links = new HrefLinks()
         console.log(args, this.directoryLevel)
 
         if(cmd == 'pwd'){
@@ -73,8 +75,17 @@ class Instructions {
             } else {
                 this.instructions.innerHTML += err.cderror
             }
-        } else if(cmd == "Help"){
+
+        } else if(cmd == "Help") {
             return this.listdirectories(this.possiblecommands)
+        } else if(cmd == "open") {
+            if(this.directoryLevel == 0){
+                this.instructions.innerHTML += err.opendirectoryerr
+            }else{
+
+                const requiredlink = links.linkdict[`${args}`]
+                links.windowlocation(requiredlink)
+            }
         }
     }
 
@@ -137,6 +148,7 @@ class errors {
     constructor(args) {
         this.cderror = ''
         this.invalidcmd = ''
+        this.opendirectoryerr = ''
         this.init(args)
     }
 
@@ -144,5 +156,27 @@ class errors {
         console.log(args)
         this.cderror = `<p>${args} is not an available directory - try open </p>`
         this.invalidcmd = `<p>-bash: ${args}: command not found</p>`
+        this.opendirectoryerr = `<p> cannot open directory - try cd</p>`
+    }
+}
+
+class HrefLinks {
+    constructor(){
+        this.linkedIn = 'linkedin.com/in/landon-vago-hughes-01a47712a'
+        this.searchbaranimation = 'https://github.com/lvh1g15/SearchBar-Animation'
+        this.sliderprogress = 'https://cocoapods.org/?q=sliderprogress'
+        this.linkdict = {}
+    }
+
+    init(){
+        this.linkdict = {
+            'linkedIn': this.linkedIn,
+            'slider-progress': this.sliderprogress,
+            'search-bar-animation': this.searchbaranimation
+        }
+    }
+
+    windowlocation(url) {
+        return window.location = url;
     }
 }
