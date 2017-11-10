@@ -85,6 +85,7 @@ class Instructions {
 
                 const requiredlink = links.linkdict[`${args}`]
                 links.windowlocation(requiredlink)
+                this.instructions.innerHTML += `<p>Check new window for project</p>`
             }
         }
     }
@@ -166,6 +167,7 @@ class HrefLinks {
         this.searchbaranimation = 'https://github.com/lvh1g15/SearchBar-Animation'
         this.sliderprogress = 'https://cocoapods.org/?q=sliderprogress'
         this.linkdict = {}
+        this.init()
     }
 
     init(){
@@ -177,6 +179,6 @@ class HrefLinks {
     }
 
     windowlocation(url) {
-        return window.location = url;
+        window.open(url, '_blank')
     }
 }
