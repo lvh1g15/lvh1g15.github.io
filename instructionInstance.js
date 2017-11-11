@@ -1,9 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    const terminalWindow = document.getElementById('instructions');
-    const terminal = new Instructions(terminalWindow);
+    const instructions = document.getElementById('instructions');
+    const themeclass = document.getElementById('changetheme');
+    const theme = new Themechange(themeclass);
+    const terminal = new Instructions(instructions);
 
-    $("#themeSelector").on("change", () => {
-
-    });
 });

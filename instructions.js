@@ -9,7 +9,6 @@ class Instructions {
             enter: 13,
         };
 
-        Instructions.init()
         this.setListeners(instructions);
 
         this.nakedcommands =
@@ -26,10 +25,6 @@ class Instructions {
 
     static pwd() {
         return this.directory
-    }
-
-    static init(){
-        $(body).css('background-color', 'black')
     }
 
     static updateDateTime() {
@@ -62,6 +57,7 @@ class Instructions {
                         console.log(args)
                         this.manager.handlecommands(command, args, this.instructions)
                     }else{
+                        console.log(command)
                         this.instructions.innerHTML += this.manager.handlecommands(command, args, this.instructions)
                     }
                     this.reset(target)
@@ -141,7 +137,14 @@ class commandsnode {
             2: "/home/projects"
         }
 
-        this.help = ['cd: Travel into directory e.g cd projects', 'ls: Show contents of directory', 'Help: List commands', 'open: Open content e.g open ->projectname<-', 'pwd: View your current location', "clear: Clear command history"]
+        this.help = ['cd: travel into directory e.g cd projects',
+                        'ls: show contents of directory',
+                        'Help: list commands',
+                        'open: open content e.g open ->projectname<-',
+                        'pwd: view your current location',
+                        "clear: clear command history",
+                        'cd .. :going back one directory'
+                    ]
         this.init()
     }
 
@@ -179,16 +182,12 @@ class commandsnode {
             }
         }
 
-        this.command.Help = () => {
+        this.command.help = () => {
             return this.listdirectories(this.help)
         }
 
         this.command.ls = () => {
             return this.listdirectories(this.directorytotal[this.directoryLevel])
-        }
-
-        this.command.dotdot = () => {
-
         }
     }
 
@@ -210,6 +209,7 @@ class commandsnode {
     }
 
     handlecommands(cmd, args, parent){
+        console.log(cmd)
         this.parent = parent
         return this.command[cmd](args)
     }
