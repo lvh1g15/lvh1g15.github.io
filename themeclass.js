@@ -7,13 +7,14 @@ class Themechange {
     }
 
     handler(content){
-        console.log(content)
         switch (content) {
             case "Grass":
                 $(body).css('background-color', 'green');
+                $(instructions).css('color', 'black')
                 break;
             case 'Homebrew':
                 $(body).css('background-color', 'black');
+                $(instructions).css('color', 'lime')
                 break
         }
     }
