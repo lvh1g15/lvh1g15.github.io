@@ -17,10 +17,25 @@ body {
     overflow: auto;
 }
 
+
 #inputcommands {
     border: none; outline: none;
 }
 
-#changetheme {
-    position: fixed;
-}
+/*#changetheme {*/
+    /*position: fixed;*/
+
+/*}*/
+
+/*.homebrew {*/
+    /*height: 40px;*/
+    /*width: 120px;*/
+    /*border-radius: 10px;*/
+/*}*/
+
+/*.grass {*/
+    /*font-size: 13pt;*/
+    /*height: 40px;*/
+    /*width: 100px;*/
+    /*border-radius: 10px;*/
+/*}*/
