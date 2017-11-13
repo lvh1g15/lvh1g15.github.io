@@ -167,6 +167,7 @@ class commandsnode {
         this.command.cd = (args) => {
             console.log(args)
             if(args == ".."){
+                console.log(this.directoryLevel)
                 if(this.directoryLevel == 0){
                     this.parent.innerHTML += this.errors(args, 3)
                 }else {
