@@ -167,7 +167,11 @@ class commandsnode {
         this.command.cd = (args) => {
             console.log(args)
             if(args == ".."){
-                this.directoryLevel = 0
+                if(this.directoryLevel == 0){
+                    this.parent.innerHTML += this.errors(args, 3)
+                }else {
+                    this.directoryLevel = 0
+                }
             }else{
                 if(this.directorytotal[this.directoryLevel].indexOf(args) == -1){
                     this.parent.innerHTML += this.errors(args, 0)
@@ -195,7 +199,8 @@ class commandsnode {
         const dictoferror = {
             0: this.cderror = `<p>${args} is not an available directory - try open </p>`,
             1: this.invalidcmd = `<p>-bash: ${args}: command not found</p>`,
-            2: this.opendirectoryerr = `<p> cannot open directory - try cd</p>`
+            2: this.opendirectoryerr = `<p> cannot open directory - try cd</p>`,
+            3: this.homealready = `<p> You are already in home directory </p>`
         }
         return dictoferror[errcode]
     }
