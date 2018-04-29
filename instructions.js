@@ -90,13 +90,13 @@ class Instructions {
 
 class HrefLinks {
     constructor(){
-        this.linkedIn = 'https://linkedin.com/in/landon-vago-hughes-01a47712a'
-        this.searchbaranimation = 'https://github.com/lvh1g15/SearchBar-Animation'
-        this.sliderprogress = 'https://cocoapods.org/?q=sliderprogress'
-        this.tinderanimation = 'https://github.com/lvh1g15/TinderLikeAnimation'
-        this.raspberrypiiot = 'https://github.com/hackcity2017'
-        this.govhack = 'https://github.com/GovHackBackstreets'
-        this.linkdict = {}
+        this.linkedIn = 'https://linkedin.com/in/landon-vago-hughes-01a47712a';
+        this.searchbaranimation = 'https://github.com/lvh1g15/SearchBar-Animation';
+        this.sliderprogress = 'https://cocoapods.org/?q=sliderprogress';
+        this.tinderanimation = 'https://github.com/lvh1g15/TinderLikeAnimation';
+        this.raspberrypiiot = 'https://github.com/hackcity2017';
+        this.govhack = 'https://github.com/GovHackBackstreets';
+        this.linkdict = {};
         this.init()
     }
 
@@ -107,35 +107,41 @@ class HrefLinks {
             'search-bar-animation': this.searchbaranimation,
             'tinder-inspired': this.tinderanimation,
             'raspberry-pi-iOS': this.raspberrypiiot,
-            'foodstamp-iOS': this.govhack
+            'foodstamp-iOS': this.govhack,
+            'double-pendulum': true
         }
     }
 
     windowlocation(url) {
-        window.open(url, '_blank')
+        if(url){
+            console.log(url);
+            window.location.href = "pendulum.html";
+        }else{
+            window.open(url, '_blank')
+        }
     }
 }
 
 class commandsnode {
     constructor() {
-        this.links = new HrefLinks()
-        this.parent = ''
-        this.command = {}
-        this.directory = "/home"
-        this.directoryLevel = 0
+        this.links = new HrefLinks();
+        this.parent = '';
+        this.command = {};
+        this.directory = "/home";
+        this.directoryLevel = 0;
         this.directorytotal = {
 
             0: ['projects', 'contact'],
             1: ["email: landonvagohughes3@gmail.com", "linkedIn"],
-            2: ["slider-progress", "search-bar-animation", 'tinder-inspired', 'raspberry-pi-iOS', 'foodstamp-iOS']
+            2: ["slider-progress", "search-bar-animation", 'tinder-inspired', 'raspberry-pi-iOS', 'foodstamp-iOS', 'double-pendulum']
 
-        }
+        };
 
         this.path = {
             0: "/home",
             1: "/home/contact",
             2: "/home/projects"
-        }
+        };
 
         this.help = ['cd: travel into directory e.g cd projects',
                         'ls: show contents of directory',
@@ -144,30 +150,30 @@ class commandsnode {
                         'pwd: view your current location',
                         "clear: clear command history",
                         'cd .. :going back one directory'
-                    ]
+                    ];
         this.init()
     }
 
     init(){
         this.command.pwd = () => {
             return this.path[this.directoryLevel]
-        }
+        };
 
         this.command.open = (args) => {
             if(this.directorylevel == 0){
                 this.parent.innerHTML += this.errors(args, 2)
             }else {
 
-                const requiredlink = this.links.linkdict[`${args}`]
-                this.links.windowlocation(requiredlink)
+                const requiredlink = this.links.linkdict[`${args}`];
+                this.links.windowlocation(requiredlink);
                 return `<p>${args} has opened in another tag please have a look</p>`
             }
-        }
+        };
 
         this.command.cd = (args) => {
-            console.log(args)
+            console.log(args);
             if(args == ".."){
-                console.log(this.directoryLevel)
+                console.log(this.directoryLevel);
                 if(this.directoryLevel == 0){
                     this.parent.innerHTML += this.errors(args, 3)
                 }else {
@@ -177,7 +183,7 @@ class commandsnode {
                 if(this.directorytotal[this.directoryLevel].indexOf(args) == -1){
                     this.parent.innerHTML += this.errors(args, 0)
                 }else{
-                    this.directory += `/${args}`
+                    this.directory += `/${args}`;
                     if(args == 'projects'){
                         this.directoryLevel = 2
                     }else if(args == 'contact'){
@@ -185,11 +191,11 @@ class commandsnode {
                     }
                 }
             }
-        }
+        };
 
         this.command.help = () => {
             return this.listdirectories(this.help)
-        }
+        };
 
         this.command.ls = () => {
             return this.listdirectories(this.directorytotal[this.directoryLevel])
@@ -202,12 +208,12 @@ class commandsnode {
             1: this.invalidcmd = `<p>-bash: ${args}: command not found</p>`,
             2: this.opendirectoryerr = `<p> cannot open directory - try cd</p>`,
             3: this.homealready = `<p> You are already in home directory </p>`
-        }
+        };
         return dictoferror[errcode]
     }
 
     listdirectories(list){
-        let output = ""
+        let output = "";
         list.forEach((item)=>{
             output += `<p>${item}</p>`
         });
@@ -215,8 +221,8 @@ class commandsnode {
     }
 
     handlecommands(cmd, args, parent){
-        console.log(cmd)
-        this.parent = parent
+        console.log(cmd);
+        this.parent = parent;
         return this.command[cmd](args)
     }
 }
