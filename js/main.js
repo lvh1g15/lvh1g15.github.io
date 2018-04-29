@@ -100,7 +100,6 @@ class Pendulum {
         this.a2_a = (num1*(num2+num3+num4)) / den;
 
         this.draw();
-        console.log(this.theta1);
     }
 }
 
