@@ -77,9 +77,6 @@ class Pendulum {
         this.vel1 += this.a1_a;
         this.vel2 += this.a2_a;
 
-        this.vel1 *= 0.9999;
-        this.vel2 *= 0.9999;
-
         this.theta1 += this.vel1;
         this.theta2 += this.vel2;
 
