@@ -1,4 +1,6 @@
 let raf;
+let arm1_len = 200;
+let arm2_len = 200;
 
 class Pendulum {
     constructor() {
@@ -10,7 +12,7 @@ class Pendulum {
         this.originY = this.canvas.height / 3;
 
         this.l = 200;
-        this.l2 = this.l;
+        this.l2 = this.l*0.5;
         this.theta1 = Math.PI / 2;
         this.theta2 = Math.PI / 2;
 
@@ -20,8 +22,8 @@ class Pendulum {
         this.a1_a = 0;
         this.a2_a = 0;
 
-        this.m1 = 15;
-        this.m2 = 15;
+        this.m1 = 50;
+        this.m2 = 10;
 
         this.g = 1;
 
@@ -54,7 +56,6 @@ class Pendulum {
 
         this.ctx.stroke();
 
-
         this.ctx.moveTo(this.posX, this.posY);
         this.ctx.arc(this.posX, this.posY, this.m1, 0, Math.PI * 2, true);
         this.ctx.fillStyle = 'blue';
@@ -80,8 +81,18 @@ class Pendulum {
         this.theta1 += this.vel1;
         this.theta2 += this.vel2;
 
-        this.secIter = true;
+        this.vel1 *= 0.999;
+        this.vel2 *= 0.999;
+
     }
+
+    updateL1 (length) {
+        this.l = length;
+    }
+
+    updatedL2 (length) {
+        this.l2 = length;
+    };
 
     motion(){
 
@@ -107,13 +118,45 @@ function move() {
     pend.ctx.clearRect(0,0, pend.canvas.width, pend.canvas.width);
     // pend.draw();
     pend.motion();
-
     raf = window.requestAnimationFrame(move);
 }
 
 let pend = new Pendulum();
 move();
 
+function reset() {
+    pend.posy2_arr = [];
+    pend.posx2_arr = [];
+    pend.theta1 = Math.PI / 2;
+    pend.theta2 = Math.PI / 2;
+}
 
+function changeLengthArm1() {
+    pend.l = document.getElementById("slider1").value;
+    reset();
+}
 
+function changeLengthArm2() {
+    pend.l2 = document.getElementById("slider2").value;
+    reset();
+}
 
+function changeMassOfBall1() {
+    pend.m1 = document.getElementById("slider3").value;
+    reset();
+}
+
+function changeMassOfBall2() {
+    pend.m2 = document.getElementById("slider4").value;
+    reset();
+}
+
+function changeArm1Angle() {
+    pend.theta1 = document.getElementById("slider5").value * Math.PI / 180;
+    reset();
+}
+
+function changeArm2Angle() {
+    pend.theta2 = document.getElementById("slider6").value * Math.PI / 180;
+    reset();
+}
