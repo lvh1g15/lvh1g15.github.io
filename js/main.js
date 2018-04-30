@@ -36,6 +36,9 @@ class Pendulum {
         this.posx2_arr = [];
         this.posy2_arr = [];
 
+        this.damping1 = 1;
+        this.damping2 = 1;
+
         this.secIter = false;
         this.draw();
     }
@@ -81,8 +84,8 @@ class Pendulum {
         this.theta1 += this.vel1;
         this.theta2 += this.vel2;
 
-        this.vel1 *= 0.999;
-        this.vel2 *= 0.999;
+        this.vel1 *= this.damping1;
+        this.vel2 *= this.damping2;
 
     }
 
@@ -158,5 +161,15 @@ function changeArm1Angle() {
 
 function changeArm2Angle() {
     pend.theta2 = document.getElementById("slider6").value * Math.PI / 180;
+    reset();
+}
+
+function ball1damping() {
+    pend.damping1 = document.getElementById("slider7").value / 1000;
+    reset();
+}
+
+function ball2damping() {
+    pend.damping2 = document.getElementById("slider8").value / 1000;
     reset();
 }

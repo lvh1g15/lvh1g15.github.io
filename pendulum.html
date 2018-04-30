@@ -106,10 +106,38 @@
                     </form>
                 </div>
             </div>
+            <div class="col s12 m5">
+                <div class="card-panel white">
+                    <div>
+                    <span>
+                        Add damping to ball 1
+                    </span>
+                    </div>
+                    <form action="#">
+                        <p class="range-field">
+                            <input type="range" id="slider7" min="0" max="1000" onchange="ball1damping()"/>
+                        </p>
+                    </form>
+                </div>
+            </div>
+            <div class="col s12 m5">
+                <div class="card-panel white">
+                    <div>
+                    <span>
+                        Add damping to ball 2
+                    </span>
+                    </div>
+                    <form action="#">
+                        <p class="range-field">
+                            <input type="range" id="slider8" min="0" max="1000" onchange="ball2damping()"/>
+                        </p>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
     <div style="width: 60%; height: 60%; float: right;">
-        <canvas id="canvas" width="800"  height="700" style="padding-left: 20px">
+        <canvas id="canvas" width="800"  height="700" style="padding-left: 20px; padding-top: 20px">
             
         </canvas>
     </div>
