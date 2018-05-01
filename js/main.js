@@ -9,7 +9,7 @@ class Pendulum {
         this.ctx2 = this.ctx;
 
         this.originX = this.canvas.width / 2;
-        this.originY = this.canvas.height / 3;
+        this.originY = this.canvas.height / 2;
 
         this.l = 200;
         this.l2 = this.l*0.5;
@@ -214,10 +214,10 @@ function checkboxvalue(){
 function changeRGB(value){
     switch(value){
         case 'R':
-            pend.R = document.getElementById("B").value;
+            pend.R = document.getElementById("R").value;
             break;
         case 'G':
-            pend.G = document.getElementById("B").value;
+            pend.G = document.getElementById("G").value;
             break;
         case 'B':
             pend.B = document.getElementById("B").value;
