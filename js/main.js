@@ -39,11 +39,32 @@ class Pendulum {
         this.damping1 = 1;
         this.damping2 = 1;
 
-        this.secIter = false;
+        this.dotsOrNot = false;
+
         this.draw();
     }
 
     draw() {
+
+        switch(this.dotsOrNot) {
+            case true:
+                this.ctx2.beginPath();
+                for(let i = 0; i < this.posy2_arr.length; i++){
+                    this.ctx2.arc(this.posx2_arr[i], this.posy2_arr[i], 1, 0, Math.PI * 2, true);
+                    // this.ctx2.fill();
+                    this.ctx2.stroke();
+                    this.ctx2.fillStyle = 'black';
+                }
+                break;
+            case false:
+                this.ctx2.beginPath();
+                for(let i = 0; i < this.posy2_arr.length; i++){
+                    this.ctx2.lineTo(this.posx2_arr[i], this.posy2_arr[i]);
+                }
+                this.ctx2.stroke();
+                break;
+        }
+
         this.posX = this.originX + this.l * Math.sin(this.theta1);
         this.posY = this.originY + this.l * Math.cos(this.theta1);
 
@@ -72,12 +93,6 @@ class Pendulum {
         this.posx2_arr.push(this.posX2);
         this.posy2_arr.push(this.posY2);
 
-        this.ctx2.beginPath();
-        for(let i = 0; i < this.posy2_arr.length; i++){
-            this.ctx2.lineTo(this.posx2_arr[i], this.posy2_arr[i]);
-        }
-        this.ctx2.stroke();
-
         this.vel1 += this.a1_a;
         this.vel2 += this.a2_a;
 
@@ -86,7 +101,6 @@ class Pendulum {
 
         this.vel1 *= this.damping1;
         this.vel2 *= this.damping2;
-
     }
 
     updateL1 (length) {
@@ -119,7 +133,6 @@ class Pendulum {
 
 function move() {
     pend.ctx.clearRect(0,0, pend.canvas.width, pend.canvas.width);
-    // pend.draw();
     pend.motion();
     raf = window.requestAnimationFrame(move);
 }
@@ -130,8 +143,12 @@ move();
 function reset() {
     pend.posy2_arr = [];
     pend.posx2_arr = [];
-    pend.theta1 = Math.PI / 2;
-    pend.theta2 = Math.PI / 2;
+    // pend.theta1 = Math.PI / 2;
+    // pend.theta2 = Math.PI / 2;
+    pend.a2_a = 0;
+    pend.a1_a = 0;
+    pend.vel1 = 0;
+    pend.vel2 = 0;
 }
 
 function changeLengthArm1() {
