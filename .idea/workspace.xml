@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="afd9f59a-4b7c-4ea4-a4bf-d266d95c73a7" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
       <change beforePath="$PROJECT_DIR$/pendulum.html" afterPath="$PROJECT_DIR$/pendulum.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -31,8 +29,8 @@
       <file leaf-file-name="pendulum.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pendulum.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="516">
-              <caret line="143" column="0" lean-forward="false" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
+            <state relative-caret-position="752">
+              <caret line="179" column="29" lean-forward="false" selection-start-line="179" selection-start-column="29" selection-end-line="179" selection-end-column="29" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -191,12 +189,12 @@
       <workItem from="1525001837994" duration="141000" />
       <workItem from="1525002219999" duration="415000" />
       <workItem from="1525079915445" duration="10687000" />
-      <workItem from="1525174974136" duration="3743000" />
+      <workItem from="1525174974136" duration="4280000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75402000" />
+    <option name="totallyTimeSpent" value="75939000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -519,8 +517,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pendulum.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="143" column="0" lean-forward="false" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
+        <state relative-caret-position="752">
+          <caret line="179" column="29" lean-forward="false" selection-start-line="179" selection-start-column="29" selection-end-line="179" selection-end-column="29" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
