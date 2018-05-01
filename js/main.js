@@ -41,6 +41,10 @@ class Pendulum {
 
         this.dotsOrNot = true;
 
+        this.R = 100;
+        this.G = 100;
+        this.B = 100;
+
         this.draw();
     }
 
@@ -52,7 +56,7 @@ class Pendulum {
                 for(let i = 0; i < this.posy2_arr.length; i++){
                     this.ctx2.arc(this.posx2_arr[i], this.posy2_arr[i], 1, 0, Math.PI * 2, true);
                     // this.ctx2.fill();
-                    this.ctx2.fillRect(this.posx2_arr[i],this.posy2_arr[i],1,1);
+                    this.ctx2.fillRect(this.posx2_arr[i],this.posy2_arr[i],2,2);
                     this.ctx2.fillStyle = 'green';
                 }
                 break;
@@ -82,11 +86,11 @@ class Pendulum {
 
         this.ctx.moveTo(this.posX, this.posY);
         this.ctx.arc(this.posX, this.posY, this.m1, 0, Math.PI * 2, true);
-        this.ctx.fillStyle = 'blue';
+        this.ctx.fillStyle = `rgb(${this.R}, ${this.G}, ${this.B})`;
 
         this.ctx.moveTo(this.posX2, this.posY2);
         this.ctx.arc(this.posX2, this.posY2, this.m2, 0, Math.PI * 2, true);
-        this.ctx.fillStyle = 'blue';
+        this.ctx.fillStyle = `rgb(${this.R}, ${this.G}, ${this.B})`;
         this.ctx.closePath();
         this.ctx.fill();
 
@@ -204,5 +208,19 @@ function checkboxvalue(){
     }else{
         // lines
         pend.dotsOrNot = false;
+    }
+}
+
+function changeRGB(value){
+    switch(value){
+        case 'R':
+            pend.R = document.getElementById("B").value;
+            break;
+        case 'G':
+            pend.G = document.getElementById("B").value;
+            break;
+        case 'B':
+            pend.B = document.getElementById("B").value;
+            break;
     }
 }
