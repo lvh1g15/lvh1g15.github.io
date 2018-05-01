@@ -111,13 +111,69 @@ class Pendulum {
         this.vel2 *= this.damping2;
     }
 
-    updateL1 (length) {
-        this.l = length;
+    len1() {
+        this.l = document.getElementById("slider1").value;
+        this.reset(false);
     }
 
-    updatedL2 (length) {
-        this.l2 = length;
-    };
+    len2() {
+        this.l2 = document.getElementById("slider2").value;
+        this.reset(false);
+    }
+
+    mass1() {
+        this.m1 = document.getElementById("slider3").value;
+        this.reset(false);
+    }
+
+    mass2(){
+        this.m2 = document.getElementById("slider4").value;
+        this.reset(false);
+    }
+
+    the1(){
+        this.theta1 = document.getElementById("slider5").value * Math.PI / 180;
+        this.reset(true);
+    }
+
+    the2(){
+        this.theta2 = document.getElementById("slider6").value * Math.PI / 180;
+        this.reset(true);
+    }
+
+    damp1(){
+        this.damping1 = document.getElementById("slider7").value / 1000;
+        this.reset(false);
+    }
+
+    damp2(){
+        this.damping2 = document.getElementById("slider8").value / 1000;
+        this.reset(false);
+    }
+
+    checkboxvalue(){
+        if($("#linestyle").prop('checked') === true){
+            //dots
+            this.dotsOrNot = true;
+        }else{
+            // lines
+            this.dotsOrNot = false;
+        }
+    }
+
+    changeRGB(value){
+        switch(value){
+            case 'R':
+                pend.R = document.getElementById("R").value;
+                break;
+            case 'G':
+                pend.G = document.getElementById("G").value;
+                break;
+            case 'B':
+                pend.B = document.getElementById("B").value;
+                break;
+        }
+    }
 
     motion(){
 
@@ -137,6 +193,19 @@ class Pendulum {
 
         this.draw();
     }
+
+    reset(isTheta) {
+        this.posy2_arr = [];
+        this.posx2_arr = [];
+        if(!isTheta) {
+            this.theta1 = 60 * Math.PI / 180;
+            this.theta2 = 60 * Math.PI / 180;
+        }
+        this.a2_a = 0;
+        this.a1_a = 0;
+        this.vel1 = 0;
+        this.vel2 = 0;
+    }
 }
 
 function move() {
@@ -148,79 +217,3 @@ function move() {
 let pend = new Pendulum();
 move();
 
-function reset(isTheta) {
-    pend.posy2_arr = [];
-    pend.posx2_arr = [];
-    if(!isTheta) {
-        pend.theta1 = 60 * Math.PI / 180;
-        pend.theta2 = 60 * Math.PI / 180;
-    }
-    pend.a2_a = 0;
-    pend.a1_a = 0;
-    pend.vel1 = 0;
-    pend.vel2 = 0;
-}
-
-function changeLengthArm1() {
-    pend.l = document.getElementById("slider1").value;
-    reset(false);
-}
-
-function changeLengthArm2() {
-    pend.l2 = document.getElementById("slider2").value;
-    reset(false);
-}
-
-function changeMassOfBall1() {
-    pend.m1 = document.getElementById("slider3").value;
-    reset(false);
-}
-
-function changeMassOfBall2() {
-    pend.m2 = document.getElementById("slider4").value;
-    reset(false);
-}
-
-function changeArm1Angle() {
-    pend.theta1 = document.getElementById("slider5").value * Math.PI / 180;
-    reset(true);
-}
-
-function changeArm2Angle() {
-    pend.theta2 = document.getElementById("slider6").value * Math.PI / 180;
-    reset(true);
-}
-
-function ball1damping() {
-    pend.damping1 = document.getElementById("slider7").value / 1000;
-    reset(false);
-}
-
-function ball2damping() {
-    pend.damping2 = document.getElementById("slider8").value / 1000;
-    reset(false);
-}
-
-function checkboxvalue(){
-    if($("#linestyle").prop('checked') === true){
-        //dots
-        pend.dotsOrNot = true;
-    }else{
-        // lines
-        pend.dotsOrNot = false;
-    }
-}
-
-function changeRGB(value){
-    switch(value){
-        case 'R':
-            pend.R = document.getElementById("R").value;
-            break;
-        case 'G':
-            pend.G = document.getElementById("G").value;
-            break;
-        case 'B':
-            pend.B = document.getElementById("B").value;
-            break;
-    }
-}
