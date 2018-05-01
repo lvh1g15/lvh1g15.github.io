@@ -90,6 +90,10 @@ class Pendulum {
         this.ctx.closePath();
         this.ctx.fill();
 
+        if(this.posx2_arr.length > 1000){
+            this.posx2_arr.splice(0, 1);
+            this.posy2_arr.splice(0, 1);
+        }
         this.posx2_arr.push(this.posX2);
         this.posy2_arr.push(this.posY2);
 
@@ -144,8 +148,8 @@ function reset(isTheta) {
     pend.posy2_arr = [];
     pend.posx2_arr = [];
     if(!isTheta) {
-        pend.theta1 = document.getElementById("slider5").value * Math.PI / 180;
-        pend.theta2 = document.getElementById("slider6").value * Math.PI / 180;
+        pend.theta1 = 60 * Math.PI / 180;
+        pend.theta2 = 60 * Math.PI / 180;
     }
     pend.a2_a = 0;
     pend.a1_a = 0;
@@ -191,4 +195,14 @@ function ball1damping() {
 function ball2damping() {
     pend.damping2 = document.getElementById("slider8").value / 1000;
     reset(false);
+}
+
+function checkboxvalue(){
+    if($("#linestyle").prop('checked') === true){
+        //dots
+        pend.dotsOrNot = true;
+    }else{
+        // lines
+        pend.dotsOrNot = false;
+    }
 }
