@@ -39,7 +39,7 @@ class Pendulum {
         this.damping1 = 1;
         this.damping2 = 1;
 
-        this.dotsOrNot = false;
+        this.dotsOrNot = true;
 
         this.draw();
     }
@@ -52,8 +52,8 @@ class Pendulum {
                 for(let i = 0; i < this.posy2_arr.length; i++){
                     this.ctx2.arc(this.posx2_arr[i], this.posy2_arr[i], 1, 0, Math.PI * 2, true);
                     // this.ctx2.fill();
-                    this.ctx2.stroke();
-                    this.ctx2.fillStyle = 'black';
+                    this.ctx2.fillRect(this.posx2_arr[i],this.posy2_arr[i],1,1);
+                    this.ctx2.fillStyle = 'green';
                 }
                 break;
             case false:
@@ -140,11 +140,13 @@ function move() {
 let pend = new Pendulum();
 move();
 
-function reset() {
+function reset(isTheta) {
     pend.posy2_arr = [];
     pend.posx2_arr = [];
-    // pend.theta1 = Math.PI / 2;
-    // pend.theta2 = Math.PI / 2;
+    if(!isTheta) {
+        pend.theta1 = document.getElementById("slider5").value * Math.PI / 180;
+        pend.theta2 = document.getElementById("slider6").value * Math.PI / 180;
+    }
     pend.a2_a = 0;
     pend.a1_a = 0;
     pend.vel1 = 0;
@@ -153,40 +155,40 @@ function reset() {
 
 function changeLengthArm1() {
     pend.l = document.getElementById("slider1").value;
-    reset();
+    reset(false);
 }
 
 function changeLengthArm2() {
     pend.l2 = document.getElementById("slider2").value;
-    reset();
+    reset(false);
 }
 
 function changeMassOfBall1() {
     pend.m1 = document.getElementById("slider3").value;
-    reset();
+    reset(false);
 }
 
 function changeMassOfBall2() {
     pend.m2 = document.getElementById("slider4").value;
-    reset();
+    reset(false);
 }
 
 function changeArm1Angle() {
     pend.theta1 = document.getElementById("slider5").value * Math.PI / 180;
-    reset();
+    reset(true);
 }
 
 function changeArm2Angle() {
     pend.theta2 = document.getElementById("slider6").value * Math.PI / 180;
-    reset();
+    reset(true);
 }
 
 function ball1damping() {
     pend.damping1 = document.getElementById("slider7").value / 1000;
-    reset();
+    reset(false);
 }
 
 function ball2damping() {
     pend.damping2 = document.getElementById("slider8").value / 1000;
-    reset();
+    reset(false);
 }
