@@ -11,26 +11,20 @@ class Instructions {
 
         this.setListeners(instructions);
 
-        this.nakedcommands =
-            "<p>Current time: <span id='datetime'>Tue Nov 7 03:27:48</span></p>\n" +
-            "<span class='helper'>Welcome user to Landons' terminal - Type 'help' to get started</span>\n" +
-            "<p id='wrapper'>\n" +
-                "<span>\n" +
-                    "<span class='roottick'> root ❯ </span>\n" +
-                "</span>\n" +
-                "<span contenteditable='true' id='inputcommands'></span>\n" +
-            "</p>"
-        Instructions.updateDateTime()
+        Instructions.updateIntroText()
+        // Instructions.updateIntroText()
     }
 
     static pwd() {
         return this.directory
     }
 
-    static updateDateTime() {
+    static updateIntroText() {
         let date = new Date();
-        let d = document.getElementById("datetime");
-        d.innerHTML = date;
+        let d = document.getElementById("intro");
+        d.innerHTML = `<p>Current Time: ${date.toString()}</p>` +
+            "<p>Welcome user to Landons' terminal - Type 'help' to get started </p>" +
+            "<p>Here is an example to get started: cd projects</p>"
     }
 
     listdirectories(list){
@@ -90,26 +84,27 @@ class Instructions {
 
 class HrefLinks {
     constructor(){
-        this.linkedIn = 'https://linkedin.com/in/landon-vago-hughes-01a47712a';
-        this.searchbaranimation = 'https://github.com/lvh1g15/SearchBar-Animation';
-        this.sliderprogress = 'https://cocoapods.org/?q=sliderprogress';
-        this.tinderanimation = 'https://github.com/lvh1g15/TinderLikeAnimation';
-        this.raspberrypiiot = 'https://github.com/hackcity2017';
-        this.govhack = 'https://github.com/GovHackBackstreets';
         this.linkdict = {};
+        this.linkdictKeys = Object.keys(this.linkdict);
         this.init()
     }
 
     init(){
         this.linkdict = {
-            'linkedIn': this.linkedIn,
-            'slider-progress': this.sliderprogress,
-            'search-bar-animation': this.searchbaranimation,
-            'tinder-inspired': this.tinderanimation,
-            'raspberry-pi-iOS': this.raspberrypiiot,
-            'foodstamp-iOS': this.govhack,
+            'YSplit': {'link': 'https://ysplit.com', 'level': 2},
+            'First Time Founder - Substack': {'link': 'https://firsttimefounder.substack.com/', 'level':2},
+            'linkedIn': {'link': 'https://linkedin.com/in/landon-vago-hughes-01a47712a', 'level': 1},
+            'slider-progress': {'link': 'https://cocoapods.org/?q=sliderprogress', 'level': 2},
+            'search-bar-animation': {'link': 'https://github.com/lvh1g15/SearchBar-Animation', 'level': 2},
+            'tinder-inspired': {'link': 'https://github.com/lvh1g15/TinderLikeAnimation', 'level': 2},
+            'foodstamp-iOS': {'link': 'https://github.com/GovHackBackstreets', 'level': 2},
+            'email': {'link': 'mailto:landonvagohughes3@gmail.com', 'level': 1},
             'double-pendulum': true
         }
+    }
+
+    checkLevel() {
+        return this.linkd
     }
 
     windowlocation(url) {
@@ -131,9 +126,9 @@ class commandsnode {
         this.directoryLevel = 0;
         this.directorytotal = {
 
-            0: ['projects', 'contact'],
-            1: ["email: landonvagohughes3@gmail.com", "linkedIn"],
-            2: ["slider-progress", "search-bar-animation", 'tinder-inspired', 'raspberry-pi-iOS', 'foodstamp-iOS', 'double-pendulum']
+            0: ['Projects', 'Contact'],
+            1: ['linkedIn', 'email'],
+            2: ["YSplit", "First Time Founder - Substack", "slider-progress", "search-bar-animation", 'tinder-inspired', 'raspberry-pi-iOS', 'foodstamp-iOS', 'double-pendulum']
 
         };
 
@@ -163,8 +158,7 @@ class commandsnode {
             if(this.directorylevel == 0){
                 this.parent.innerHTML += this.errors(args, 2)
             }else {
-
-                const requiredlink = this.links.linkdict[`${args}`];
+                const requiredlink = this.links.linkdict[`${args}`]['link'];
                 this.links.windowlocation(requiredlink);
                 return `<p>${args} has opened in another tag please have a look</p>`
             }
@@ -184,9 +178,9 @@ class commandsnode {
                     this.parent.innerHTML += this.errors(args, 0)
                 }else{
                     this.directory += `/${args}`;
-                    if(args == 'projects'){
+                    if(args == 'Projects'){
                         this.directoryLevel = 2
-                    }else if(args == 'contact'){
+                    }else if(args == 'Contact'){
                         this.directoryLevel = 1
                     }
                 }
