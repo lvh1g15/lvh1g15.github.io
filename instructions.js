@@ -115,7 +115,7 @@ class HrefLinks {
     windowlocation(url) {
         if(url){
             console.log(url);
-            window.location.href = "pendulum.html";
+            window.location.href = url;
         }else{
             window.open(url, '_blank')
         }
