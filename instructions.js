@@ -3,28 +3,28 @@ class Instructions {
     constructor(instructions) {
         this.manager = new commandsnode()
         let inputcommand = document.getElementById('inputcommands')
+        this.date = new Date();
         inputcommand.focus()
         this.instructions = instructions
         this.commandKeys = {
             enter: 13,
         };
+        this.nakedcommands = `<p>Current Time: ${this.date.toString()}</p>` +
+        "<p>Welcome user to Landons' terminal - Type 'help' to get started </p>" +
+        "<p>Here is an example to get started: cd projects</p>"
 
         this.setListeners(instructions);
 
-        Instructions.updateIntroText()
-        // Instructions.updateIntroText()
+        this.updateIntroText()
     }
 
     static pwd() {
         return this.directory
     }
 
-    static updateIntroText() {
-        let date = new Date();
+    updateIntroText() {
         let d = document.getElementById("intro");
-        d.innerHTML = `<p>Current Time: ${date.toString()}</p>` +
-            "<p>Welcome user to Landons' terminal - Type 'help' to get started </p>" +
-            "<p>Here is an example to get started: cd projects</p>"
+        d.innerHTML = this.nakedcommands;
     }
 
     listdirectories(list){
@@ -99,12 +99,11 @@ class HrefLinks {
             'tinder-inspired': {'link': 'https://github.com/lvh1g15/TinderLikeAnimation', 'level': 2},
             'foodstamp-iOS': {'link': 'https://github.com/GovHackBackstreets', 'level': 2},
             'email': {'link': 'mailto:landonvagohughes3@gmail.com', 'level': 1},
-            'double-pendulum': true
+            'double-pendulum': {'link': 'https://lvh1g15.github.io/pendulum', 'level': 2}}
         }
-    }
 
     checkLevel() {
-        return this.linkd
+        return this.link
     }
 
     windowlocation(url) {
