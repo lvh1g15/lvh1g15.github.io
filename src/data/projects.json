@@ -150,21 +150,26 @@
       "strategyPhotos": {
         "type": "landscape",
         "photos": [
+          "/images/ysplit/strategy/1.jpg",
+          "/images/ysplit/strategy/2.jpg",
+          "/images/ysplit/strategy/3.jpg",
+          "/images/ysplit/strategy/4.jpg",
+          "/images/ysplit/strategy/5.jpg",
+          "/images/ysplit/strategy/6.jpg",
+          "/images/ysplit/strategy/7.jpg",
+          "/images/ysplit/strategy/8.jpg",
+          "/images/ysplit/strategy/9.jpg",
+          "/images/ysplit/strategy/10.jpg",
+          "/images/ysplit/strategy/11.png",
+          "/images/ysplit/strategy/12.png",
+          "/images/ysplit/strategy/13.png",
+          "/images/ysplit/strategy/14.png",
+          "/images/ysplit/strategy/15.png"
         ]
       },
       "solutionPhotos": {
         "type": "landscape",
         "photos": [
-          "/images/ysplit/solutions/1.jpg",
-          "/images/ysplit/solutions/2.jpg",
-          "/images/ysplit/solutions/3.jpg",
-          "/images/ysplit/solutions/4.jpg",
-          "/images/ysplit/solutions/5.jpg",
-          "/images/ysplit/solutions/6.jpg",
-          "/images/ysplit/solutions/7.jpg",
-          "/images/ysplit/solutions/8.jpg",
-          "/images/ysplit/solutions/9.jpg",
-          "/images/ysplit/solutions/10.jpg",
           "/images/ysplit/solutions/11.jpg",
           "/images/ysplit/solutions/12.jpg",
           "/images/ysplit/solutions/13.jpg",
