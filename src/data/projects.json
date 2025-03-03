@@ -134,13 +134,13 @@
       ],
       "year": 2018,
       "role": "Cofounder & Head of Product Design",
-      "client": "YSplit",
+      "client": "Fuse (formerly known as YSplit)",
       "duration": "4.5 years",
       "companyLogo": "/images/ysplit/logo.png",
-      "companyName": "YSplit",
+      "companyName": "Fuse (formerly known as YSplit)",
       "companyDescription": "A credit card that let users split any payment automatically with any number of people, in real time.",
-      "titleRoleDescription": "I was focused on building intuitive user experiences for all of YSplit's features.",
-      "roleDescription": "Starting in 2018, after graduating from the University of Southampton, the 3 of us got into YCombinator and subsequently raised $1M in pre-seed funding after we able to go from 0 to $30,000 in monthly GMV within 3 months with our bill splitting concept. Once we released the YSplit card, we grew our GMV to over $150,000 monthly and over 2,000 active card users. This helped us raise an additional $3.2M in capital from top-tier investors like Paul Graham, Paul Buchheit, and Justin Kan.",
+      "titleRoleDescription": "I was focused on building intuitive user experiences for all of YSplit's (Fuse's) features.",
+      "roleDescription": "Starting in 2018, after graduating from the University of Southampton, the 3 of us got into YCombinator and subsequently raised $1M in pre-seed funding after we able to go from 0 to $30,000 in monthly GMV within 3 months with our bill splitting concept. Once we released the YSplit card, we grew our GMV to over $150,000 monthly and over 2,000 active card users. This helped us raise an additional $3.2M in capital from top-tier investors like Paul Graham, Paul Buchheit, and Justin Kan. This is when we changed the name from YSplit to Fuse.",
       "contributions": [
         "Concept Design",
         "Product Strategy",
@@ -259,10 +259,7 @@
           "/images/ysplit/result/42.jpg",
           "/images/ysplit/result/43.jpg",
           "/images/ysplit/result/44.jpg",
-          "/images/ysplit/result/45.jpg",
-          "/images/ysplit/result/46.jpg",
-          "/images/ysplit/result/47.jpg",
-          "/images/ysplit/result/48.jpg"
+          "/images/ysplit/result/45.jpg"
         ]
       },
       "productLink": ""
