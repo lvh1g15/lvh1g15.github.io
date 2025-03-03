@@ -1,0 +1,266 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Immie",
+      "description": "Marriage green card preparation software",
+      "bgGradient": "/images/immie/gradient.svg",
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Next.js",
+        "Figma",
+        "Webflow"
+      ],
+      "year": 2022,
+      "role": "Cofounder & Head of Product Design",
+      "client": "Immie",
+      "duration": "Current",
+      "companyLogo": "/images/immie/logo.svg",
+      "companyName": "Immie",
+      "companyDescription": "Immie makes it 10x cheaper to prepare for your marriage green card application.",
+      "roleDescription": "After going through the marriage green card application process ourselves, we realised that the amount we paid for our lawyer was not worth it. Not only could we have done it ourselves but the amount of money we could have saved was insane. We decided to build Immie to make the process 10x cheaper and easier for others going through the same thing.",
+      "titleRoleDescription": "I designed then built the MVP & landing page from scratch.",
+      "contributions": [
+        "Concept Design",
+        "Product Strategy",
+        "0 to 1",
+        "UX Research"
+      ],
+      "strategyPhotos": {
+        "type": "landscape",
+        "photos": [
+          "/images/immie/strategy/1.png",
+          "/images/immie/strategy/2.png",
+          "/images/immie/strategy/3.png",
+          "/images/immie/strategy/4.png",
+          "/images/immie/strategy/5.png",
+          "/images/immie/strategy/6.png",
+          "/images/immie/strategy/7.png"
+        ]
+      },
+      "solutionPhotos": {
+        "type": "landscape",
+        "photos": [
+        ]
+      },
+      "developmentPhotos": {
+        "type": "landscape",
+        "photos": [
+          "/images/immie/implementation/1.jpeg"
+        ]
+      },
+      "productLink": "https://immie.co"
+    },
+    {
+      "id": 2,
+      "title": "Fuse",
+      "description": "A unified API for banking data aggregators.",
+      "bgGradient": "/images/fuse/gradient.svg",
+      "technologies": [
+        "Swift",
+        "SwiftUI"
+      ],
+      "year": 2022,
+      "role": "Product Designer",
+      "client": "Fuse",
+      "duration": "Current",
+      "companyLogo": "/images/fuse/logo.svg",
+      "companyName": "Fuse",
+      "companyDescription": "A unified banking data aggregators for fintechs.",
+      "titleRoleDescription": "I've was in charge of leading the dashboard experience as well the bank connecting flow our end users used to connect their bank accounts.",
+      "roleDescription": "After pivoting from YSplit. We started Fuse to solve a big pain that we had while working on YSplit which was reliable bank connections. The idea behind Fuse was to unify all banking data aggregators into one API with the aim of increasing user conversion rates for fintechs during their onboarding flows. We had an MVP ready in 1 month and 6 months we were live and integrated into 10 B2B fintechs with over 400,000 stable connections.",
+      "contributions": [
+        "Concept Design",
+        "Product Strategy",
+        "0 to 1",
+        "UX Research"
+      ],
+      "strategyPhotos": {
+        "type": "landscape",
+        "photos": [
+          "/images/fuse/strategy/1.jpg",
+          "/images/fuse/strategy/2.jpg"
+        ]
+      },
+      "solutionPhotos": {
+        "type": "landscape",
+        "photos": [
+          "/images/fuse/solutions/1.jpg",
+          "/images/fuse/solutions/2.jpg",
+          "/images/fuse/solutions/3.jpg",
+          "/images/fuse/solutions/4.jpg",
+          "/images/fuse/solutions/5.jpg",
+          "/images/fuse/solutions/6.jpg",
+          "/images/fuse/solutions/7.jpg",
+          "/images/fuse/solutions/8.jpg",
+          "/images/fuse/solutions/9.jpg"
+        ]
+      },
+      "developmentPhotos": {
+        "type": "landscape",
+        "photos": [
+          "/images/fuse/implementation/1.jpg",
+          "/images/fuse/implementation/2.jpg",
+          "/images/fuse/implementation/3.jpg",
+          "/images/fuse/implementation/4.jpg",
+          "/images/fuse/implementation/5.jpg",
+          "/images/fuse/implementation/6.jpg",
+          "/images/fuse/implementation/7.jpg",
+          "/images/fuse/implementation/8.jpg",
+          "/images/fuse/implementation/9.jpg",
+          "/images/fuse/implementation/10.jpg",
+          "/images/fuse/implementation/11.jpg",
+          "/images/fuse/implementation/12.jpg",
+          "/images/fuse/implementation/13.jpg",
+          "/images/fuse/implementation/14.jpg",
+          "/images/fuse/implementation/15.jpg",
+          "/images/fuse/implementation/16.jpg",
+          "/images/fuse/implementation/17.jpg"
+        ]
+      },
+      "productLink": ""
+    },
+    {
+      "id": 3,
+      "title": "YSplit",
+      "bgGradient": "/images/fin/gradient.svg",
+      "technologies": [
+        "Swift",
+        "SwiftUI",
+        "Sketch",
+        "Firebase"
+      ],
+      "year": 2018,
+      "role": "Cofounder & Head of Product Design",
+      "client": "YSplit",
+      "duration": "4.5 years",
+      "companyLogo": "/images/ysplit/logo.png",
+      "companyName": "YSplit",
+      "companyDescription": "A credit card that let users split any payment automatically with any number of people, in real time.",
+      "titleRoleDescription": "I was focused on building intuitive user experiences for all of YSplit's features.",
+      "roleDescription": "Starting in 2018, after graduating from the University of Southampton, the 3 of us got into YCombinator and subsequently raised $1M in pre-seed funding after we able to go from 0 to $30,000 in monthly GMV within 3 months with our bill splitting concept. Once we released the YSplit card, we grew our GMV to over $150,000 monthly and over 2,000 active card users. This helped us raise an additional $3.2M in capital from top-tier investors like Paul Graham, Paul Buchheit, and Justin Kan.",
+      "contributions": [
+        "Concept Design",
+        "Product Strategy",
+        "0 to 1",
+        "UX Research"
+      ],
+      "strategyPhotos": {
+        "type": "landscape",
+        "photos": [
+        ]
+      },
+      "solutionPhotos": {
+        "type": "landscape",
+        "photos": [
+          "/images/ysplit/solutions/1.jpg",
+          "/images/ysplit/solutions/2.jpg",
+          "/images/ysplit/solutions/3.jpg",
+          "/images/ysplit/solutions/4.jpg",
+          "/images/ysplit/solutions/5.jpg",
+          "/images/ysplit/solutions/6.jpg",
+          "/images/ysplit/solutions/7.jpg",
+          "/images/ysplit/solutions/8.jpg",
+          "/images/ysplit/solutions/9.jpg",
+          "/images/ysplit/solutions/10.jpg",
+          "/images/ysplit/solutions/11.jpg",
+          "/images/ysplit/solutions/12.jpg",
+          "/images/ysplit/solutions/13.jpg",
+          "/images/ysplit/solutions/14.jpg",
+          "/images/ysplit/solutions/15.jpg",
+          "/images/ysplit/solutions/16.jpg",
+          "/images/ysplit/solutions/17.jpg",
+          "/images/ysplit/solutions/18.jpg",
+          "/images/ysplit/solutions/19.jpg",
+          "/images/ysplit/solutions/20.jpg",
+          "/images/ysplit/solutions/21.jpg",
+          "/images/ysplit/solutions/22.jpg",
+          "/images/ysplit/solutions/23.jpg",
+          "/images/ysplit/solutions/24.jpg",
+          "/images/ysplit/solutions/25.jpg",
+          "/images/ysplit/solutions/26.jpg",
+          "/images/ysplit/solutions/27.jpg",
+          "/images/ysplit/solutions/28.jpg",
+          "/images/ysplit/solutions/29.jpg",
+          "/images/ysplit/solutions/30.jpg",
+          "/images/ysplit/solutions/31.jpg",
+          "/images/ysplit/solutions/32.jpg",
+          "/images/ysplit/solutions/33.jpg",
+          "/images/ysplit/solutions/34.jpg",
+          "/images/ysplit/solutions/35.jpg",
+          "/images/ysplit/solutions/36.jpg",
+          "/images/ysplit/solutions/37.jpg",
+          "/images/ysplit/solutions/38.jpg",
+          "/images/ysplit/solutions/39.jpg",
+          "/images/ysplit/solutions/40.jpg",
+          "/images/ysplit/solutions/41.jpg",
+          "/images/ysplit/solutions/42.jpg",
+          "/images/ysplit/solutions/43.jpg",
+          "/images/ysplit/solutions/44.jpg",
+          "/images/ysplit/solutions/45.jpg",
+          "/images/ysplit/solutions/46.jpg",
+          "/images/ysplit/solutions/47.jpg",
+          "/images/ysplit/solutions/48.png",
+          "/images/ysplit/solutions/49.png",
+          "/images/ysplit/solutions/50.png"     
+        ]
+      },
+      "developmentPhotos": {
+        "type": "portrait",
+        "photos": [
+          "/images/ysplit/result/1.jpg",
+          "/images/ysplit/result/2.jpg",
+          "/images/ysplit/result/3.jpg",
+          "/images/ysplit/result/4.jpg",
+          "/images/ysplit/result/5.jpg",
+          "/images/ysplit/result/6.jpg",
+          "/images/ysplit/result/7.jpg",
+          "/images/ysplit/result/8.jpg",
+          "/images/ysplit/result/9.jpg",
+          "/images/ysplit/result/10.jpg",
+          "/images/ysplit/result/11.jpg",
+          "/images/ysplit/result/12.jpg",
+          "/images/ysplit/result/13.jpg",
+          "/images/ysplit/result/14.jpg",
+          "/images/ysplit/result/15.jpg",
+          "/images/ysplit/result/16.jpg",
+          "/images/ysplit/result/17.jpg",
+          "/images/ysplit/result/18.jpg",
+          "/images/ysplit/result/19.jpg",
+          "/images/ysplit/result/20.jpg",
+          "/images/ysplit/result/21.jpg",
+          "/images/ysplit/result/22.jpg",
+          "/images/ysplit/result/23.jpg",
+          "/images/ysplit/result/24.jpg",
+          "/images/ysplit/result/25.jpg",
+          "/images/ysplit/result/26.jpg",
+          "/images/ysplit/result/27.jpg",
+          "/images/ysplit/result/28.jpg",
+          "/images/ysplit/result/29.jpg",
+          "/images/ysplit/result/30.jpg",
+          "/images/ysplit/result/31.jpg",
+          "/images/ysplit/result/32.jpg",
+          "/images/ysplit/result/33.jpg",
+          "/images/ysplit/result/34.jpg",
+          "/images/ysplit/result/35.jpg",
+          "/images/ysplit/result/36.jpg",
+          "/images/ysplit/result/37.jpg",
+          "/images/ysplit/result/38.jpg",
+          "/images/ysplit/result/39.jpg",
+          "/images/ysplit/result/40.jpg",
+          "/images/ysplit/result/41.jpg",
+          "/images/ysplit/result/42.jpg",
+          "/images/ysplit/result/43.jpg",
+          "/images/ysplit/result/44.jpg",
+          "/images/ysplit/result/45.jpg",
+          "/images/ysplit/result/46.jpg",
+          "/images/ysplit/result/47.jpg",
+          "/images/ysplit/result/48.jpg"
+        ]
+      },
+      "productLink": ""
+    }
+  ]
+}
