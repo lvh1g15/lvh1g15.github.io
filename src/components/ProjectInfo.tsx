@@ -28,10 +28,10 @@ export function ProjectInfo({ project }: ProjectInfoProps) {
       
       {/* Project information - fixed 60% width on larger screens, full width on small */}
       <div className="w-full md:w-[60%] flex-shrink-0">
-        <h2 className="text-3xl font-bold mb-4 ">
+        <h2 className="text-xl md:text-3xl font-bold mb-4">
         {project.companyDescription}
           {project.titleRoleDescription && (
-            <span className=" text-zinc-400 ">
+            <span className="text-zinc-400">
               {" "} {project.titleRoleDescription}
             </span>
           )}

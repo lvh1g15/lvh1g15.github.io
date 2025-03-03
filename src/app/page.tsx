@@ -362,7 +362,7 @@ export default function Home() {
                 className="fixed top-0 h-screen px-8 dark:bg-black lg:px-64 md:px-24"
               >
                 <motion.div
-                  className="flex flex-col bg-blue gap-2 h-full justify-center relative w-full"
+                  className="flex flex-col gap-2 h-full justify-center relative w-full"
                   style={{
                     opacity: headerOpacity,
                     scale: headerScale,
@@ -419,7 +419,7 @@ export default function Home() {
                   />
 
                   <h1 className="text-2xl font-bold sm:text-4xl">
-                    Hey. I&apos;m Landon. Welcome to my portfolio. On this page you can find all of my product design work from over the past 7 years. Ranging from
+                    Hey. I&apos;m Landon. Welcome to my portfolio. Here you&apos;ll find all of my product design work from over the past 6 years. Ranging from
                     <motion.span
                       className="text-zinc-400 leading-tight cursor-pointer"
                       whileHover={{ color: "#1070FF" }}
