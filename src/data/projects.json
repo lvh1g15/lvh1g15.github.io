@@ -48,7 +48,14 @@
       "developmentPhotos": {
         "type": "landscape",
         "photos": [
-          "/images/immie/implementation/1.jpeg"
+          "/images/immie/implementation/1.jpeg",
+          "/images/immie/implementation/2.png",
+          "/images/immie/implementation/3.png",
+          "/images/immie/implementation/4.jpeg",
+          "/images/immie/implementation/5.png",
+          "/images/immie/implementation/6.png",
+          "/images/immie/implementation/7.png",
+          "/images/immie/implementation/8.png"
         ]
       },
       "productLink": "https://immie.co"
