@@ -423,6 +423,7 @@ export default function Home() {
                     <motion.span
                       className="text-zinc-400 leading-tight cursor-pointer"
                       whileHover={{ color: "#1070FF" }}
+                      whileTap={{ color: "#1070FF" }}
                       transition={{ duration: 0.3 }}
                       onMouseEnter={() => {
                         setIsMobileHovered(true);
@@ -430,10 +431,16 @@ export default function Home() {
                         setIsLandingHovered(false);
                       }}
                       onMouseLeave={() => setIsMobileHovered(false)}
+                      onTap={() => {
+                        setIsMobileHovered(true);
+                        setIsWebHovered(false);
+                        setIsLandingHovered(false);
+                      }}
                     > mobile apps </motion.span> to
                     <motion.span
                       className="text-zinc-400 leading-tight cursor-pointer"
                       whileHover={{ color: "#1070FF" }}
+                      whileTap={{ color: "#1070FF" }}
                       transition={{ duration: 0.3 }}
                       onMouseEnter={() => {
                         setIsWebHovered(true);
@@ -441,10 +448,16 @@ export default function Home() {
                         setIsLandingHovered(false);
                       }}
                       onMouseLeave={() => setIsWebHovered(false)}
+                      onTap={() => {
+                        setIsWebHovered(true);
+                        setIsMobileHovered(false);
+                        setIsLandingHovered(false);
+                      }}
                     > web apps </motion.span> to
                     <motion.span
                       className="text-zinc-400 leading-tight cursor-pointer"
                       whileHover={{ color: "#1070FF" }}
+                      whileTap={{ color: "#1070FF" }}
                       transition={{ duration: 0.3 }}
                       onMouseEnter={() => {
                         setIsLandingHovered(true);
@@ -452,6 +465,11 @@ export default function Home() {
                         setIsMobileHovered(false);
                       }}
                       onMouseLeave={() => setIsLandingHovered(false)}
+                      onTap={() => {
+                        setIsLandingHovered(true);
+                        setIsWebHovered(false);
+                        setIsMobileHovered(false);
+                      }}
                     > landing page design. </motion.span>
                     <span>Scroll to start</span>
                     <ScrollVideoAnimation
