@@ -552,27 +552,10 @@ export default function Home() {
                           )}
                         </motion.div>
 
-                        {/* Project information in a sliding card */}
-                        {/* <motion.div
-                          className="w-full bg-gray-50 dark:bg-zinc-900 rounded-3xl relative -z-10"
-                          initial={{ y: -380}}
-                          whileInView={{
-                            y: -50,
-                            transition: {
-                              duration: 0.6,
-                              ease: [0.25, 0.1, 0.25, 1.0],
-                              delay: 1.3
-                            }
-                          }}
-
-                          viewport={{ once: true }}
-                        >
-                          <ProjectInfo project={project as Project} />
-                        </motion.div> */}
                          <motion.div
                            initial={{ opacity: 0 }}
                            whileInView={{ opacity: 1 }}
-                           viewport={{ once: true, margin: "-250px" }}
+                           viewport={{ once: true, margin: "-30%" }}
                            transition={{ duration: 0.6, delay: 0.3 }}
                          >
                            <ProjectInfo project={project as Project} />
