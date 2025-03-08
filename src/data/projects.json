@@ -30,6 +30,7 @@
       ],
       "strategyPhotos": {
         "type": "landscape",
+        "previewPhoto": "/images/immie/strategy/1.png",
         "photos": [
           "/images/immie/strategy/1.png",
           "/images/immie/strategy/2.png",
@@ -47,6 +48,7 @@
       },
       "developmentPhotos": {
         "type": "landscape",
+        "previewPhoto": "/images/immie/implementation/1.jpeg",
         "photos": [
           "/images/immie/implementation/1.jpeg",
           "/images/immie/implementation/2.png",
@@ -86,6 +88,7 @@
       ],
       "strategyPhotos": {
         "type": "landscape",
+        "previewPhoto": "/images/fuse/strategy/1.jpg",
         "photos": [
           "/images/fuse/strategy/1.jpg",
           "/images/fuse/strategy/2.jpg"
@@ -93,6 +96,7 @@
       },
       "solutionPhotos": {
         "type": "landscape",
+        "previewPhoto": "/images/fuse/solutions/1.jpg",
         "photos": [
           "/images/fuse/solutions/1.jpg",
           "/images/fuse/solutions/2.jpg",
@@ -107,6 +111,7 @@
       },
       "developmentPhotos": {
         "type": "landscape",
+        "previewPhoto": "/images/fuse/implementation/20.jpg",
         "photos": [
           "/images/fuse/implementation/19.jpg",
           "/images/fuse/implementation/20.jpg",
@@ -156,6 +161,7 @@
       ],
       "strategyPhotos": {
         "type": "landscape",
+        "previewPhoto": "/images/ysplit/strategy/1.jpg",
         "photos": [
           "/images/ysplit/strategy/1.jpg",
           "/images/ysplit/strategy/2.jpg",
@@ -176,6 +182,7 @@
       },
       "solutionPhotos": {
         "type": "landscape",
+        "previewPhoto": "/images/ysplit/solutions/1.jpg",
         "photos": [
           "/images/ysplit/solutions/11.jpg",
           "/images/ysplit/solutions/12.jpg",
@@ -221,6 +228,7 @@
       },
       "developmentPhotos": {
         "type": "portrait",
+        "previewPhoto": "/images/ysplit/result/1.jpg",
         "photos": [
           "/images/ysplit/result/1.jpg",
           "/images/ysplit/result/2.jpg",

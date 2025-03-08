@@ -213,30 +213,40 @@ export default function Home() {
   };
 
   // Get the appropriate images based on the active tab
-  const getImagesForTab = (project: Project, tab: TabType): string[] => {
+  const getImagesForTab = (project: Project, tab: TabType): { images: string[], previewImage?: string } => {
     let photoSource;
+    let previewImage;
     
     switch (tab) {
       case "Strategy":
-        photoSource = project.strategyPhotos;
+        photoSource = project.strategyPhotos; 
+        previewImage = project.strategyPhotos?.previewPhoto;
         break;
       case "Solutions":
         photoSource = project.solutionPhotos;
+        previewImage = project.solutionPhotos?.previewPhoto;
         break;
       case "Final Result":
         photoSource = project.developmentPhotos;
+        previewImage = project.developmentPhotos?.previewPhoto;
         break;
       default:
-        return [];
+        return { images: [] };
     }
     
     // Handle both string[] and PhotoCollection formats
     if (!photoSource) {
-      return [];
+      return { images: [] };
     } else if (Array.isArray(photoSource)) {
-      return photoSource;
+      return { 
+        images: photoSource,
+        previewImage: previewImage || ""
+      };
     } else {
-      return photoSource.photos;
+      return { 
+        images: photoSource.photos,
+        previewImage: previewImage || ""
+      };
     }
   };
 
@@ -497,7 +507,7 @@ export default function Home() {
                     : availableTabs.length > 0 ? availableTabs[0] : null;
 
                   // Get the images for the current tab
-                  const tabImages = currentTab ? getImagesForTab(project as Project, currentTab) : [];
+                  const { images: tabImages, previewImage: tabPreviewImage } = currentTab ? getImagesForTab(project as Project, currentTab) : { images: [], previewImage: null };
 
                   return (
                     <Container id={`project-${project.id}`} key={project.id}>
@@ -564,7 +574,7 @@ export default function Home() {
                             <ProjectCard
                               project={project as Project}
                               images={tabImages}
-                              previewImage={tabImages.length > 0 ? tabImages[0] : undefined}
+                              previewImage={tabPreviewImage !== null ? tabPreviewImage : undefined}
                               aspectRatio={currentTab ? getAspectRatioForTab(project as Project, currentTab as TabType) : AspectRatio.LANDSCAPE}
                             />
                           )}

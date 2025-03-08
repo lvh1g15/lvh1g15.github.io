@@ -18,9 +18,9 @@ export interface Project {
   contributions?: string[];
   
   // Photo collections for each tab with aspect ratio type
-  strategyPhotos?: PhotoCollection | string[];
-  solutionPhotos?: PhotoCollection | string[];
-  developmentPhotos?: PhotoCollection | string[];
+  strategyPhotos?: PhotoCollection;
+  solutionPhotos?: PhotoCollection;
+  developmentPhotos?: PhotoCollection; 
   
   // Custom tabs
   tabs?: string[];
@@ -33,6 +33,7 @@ export interface Project {
 export interface PhotoCollection {
   type: AspectRatio;
   photos: string[];
+  previewPhoto?: string;
 }
 
 // Enum for aspect ratio types
